@@ -1,1 +1,1 @@
-# mycobot_320pi_with_gripper_moveit2
+# mycobot320pi_gripper_moveit2
