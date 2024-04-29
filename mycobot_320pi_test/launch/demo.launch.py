@@ -127,6 +127,20 @@ def generate_launch_description():
             "/controller_manager",
         ],
     )
+    fake_joint_driver_node = Node(
+        package='fake_joint_driver',
+        executable='fake_joint_driver_node', 
+        name='fake_joint_driver_node',
+        output='screen',
+        parameters=[
+            {'robot_description': moveit_config.robot_description},
+            os.path.join(
+                get_package_share_directory("mycobot_320pi_test"),
+                "config",
+                "fake_controllers.yaml",
+            ),
+            ],
+        )
 
     '''
     panda_arm_controller_spawner = Node(
@@ -168,6 +182,7 @@ def generate_launch_description():
             move_group_node,
             ros2_control_node,
             joint_state_broadcaster_spawner,
+            fake_joint_driver_node,
             #panda_arm_controller_spawner,
             #panda_hand_controller_spawner,
             #mongodb_server_node,
