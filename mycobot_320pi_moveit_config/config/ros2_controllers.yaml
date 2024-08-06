@@ -17,12 +17,12 @@ controller_manager:
 mycobot_arm_controller:
   ros__parameters:
     joints:
-      - joint_1
-      - joint_2
-      - joint_3
-      - joint_4
-      - joint_5
-      - joint_6
+      - joint2_to_joint1
+      - joint3_to_joint2
+      - joint4_to_joint3
+      - joint5_to_joint4
+      - joint6_to_joint5
+      - joint6output_to_joint6
     command_interfaces:
       - position
     state_interfaces:

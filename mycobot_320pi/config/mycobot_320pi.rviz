@@ -1,15 +1,13 @@
 Panels:
   - Class: rviz_common/Displays
-    Help Height: 78
+    Help Height: 0
     Name: Displays
     Property Tree Widget:
       Expanded:
         - /Global Options1
         - /Status1
-        - TF1
-        - /RobotModel1
       Splitter Ratio: 0.5
-    Tree Height: 659
+    Tree Height: 737
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -67,6 +65,45 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gripper_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link1:
           Alpha: 1
           Show Axes: false
@@ -97,6 +134,13 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -106,35 +150,66 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base:
-          Value: true
+          Value: false
+        base_link:
+          Value: false
+        gripper_base:
+          Value: false
+        gripper_left1:
+          Value: false
+        gripper_left2:
+          Value: false
+        gripper_left3:
+          Value: false
+        gripper_right1:
+          Value: false
+        gripper_right2:
+          Value: false
+        gripper_right3:
+          Value: false
         link1:
-          Value: true
+          Value: false
         link2:
-          Value: true
+          Value: false
         link3:
-          Value: true
+          Value: false
         link4:
-          Value: true
+          Value: false
         link5:
-          Value: true
+          Value: false
         link6:
+          Value: false
+        tcp:
           Value: true
-      Marker Scale: 0.3
+      Marker Scale: 0.30000001192092896
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base:
-          link1:
-            link2:
-              link3:
-                link4:
-                  link5:
-                    link6:
-                      {}
+        base_link:
+          base:
+            link1:
+              link2:
+                link3:
+                  link4:
+                    link5:
+                      link6:
+                        gripper_base:
+                          gripper_left2:
+                            {}
+                          gripper_left3:
+                            gripper_left1:
+                              {}
+                          gripper_right2:
+                            {}
+                          gripper_right3:
+                            gripper_right1:
+                              {}
+                          tcp:
+                            {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -152,6 +227,9 @@ Visualization Manager:
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -180,7 +258,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 4.0107622146606445
+      Distance: 1.475123405456543
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -195,10 +273,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4703980088233948
+      Pitch: 0.4953981041908264
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.6454006433486938
+      Yaw: 4.933582305908203
     Saved: ~
 Window Geometry:
   Displays:

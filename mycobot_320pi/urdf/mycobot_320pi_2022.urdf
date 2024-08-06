@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" name="mycobot_320pi_with_gripper" >
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" name="firefighter" >
 
   <link name="base_link"/>
 
@@ -114,7 +114,7 @@
     <child link="base"/> 
   </joint>
 
-  <joint name="joint_1" type="revolute">
+  <joint name="joint2_to_joint1" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort = "1000.0" lower = "-2.96" upper = "2.96" velocity = "0"/>
     <parent link="base"/>
@@ -122,7 +122,7 @@
     <origin xyz= "0 0 0.162" rpy = "0 0 0"/> 
   </joint>
 
-  <joint name="joint_2" type="revolute">
+  <joint name="joint3_to_joint2" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort = "1000.0" lower = "-2.79" upper = "2.79" velocity = "0"/>
     <parent link="link1"/>
@@ -130,7 +130,7 @@
     <origin xyz= "0 0 0" rpy = "0 -1.5708 1.5708"/> 
   </joint>
 
-  <joint name="joint_3" type="revolute">
+  <joint name="joint4_to_joint3" type="revolute">
     <axis xyz=" 0 0 1"/>
     <limit effort = "1000.0" lower = "-2.79" upper = "2.79" velocity = "0"/>
     <parent link="link2"/>
@@ -138,7 +138,7 @@
     <origin xyz= "0.13635 0 0   " rpy = "0 0 0"/>  
   </joint>
 
-  <joint name="joint_4" type="revolute">
+  <joint name="joint5_to_joint4" type="revolute">
     <axis xyz=" 0 0 1"/>
     <limit effort = "1000.0" lower = "-2.79" upper = "2.79" velocity = "0"/>
     <parent link="link3"/>
@@ -146,7 +146,7 @@
      <origin xyz = "0.1205 0 0.082 " rpy = " 0 0 1.57080"/>
   </joint>
 
-  <joint name="joint_5" type="revolute">
+  <joint name="joint6_to_joint5" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort = "1000.0" lower = "-2.96" upper = "2.96" velocity = "0"/>
     <parent link="link4"/>
@@ -154,7 +154,7 @@
      <origin xyz= "0 -0.084 0" rpy = "1.5708 0 0"/>
   </joint>
 
-  <joint name="joint_6" type="revolute">
+  <joint name="joint6output_to_joint6" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort = "1000.0" lower = "-3.05" upper = "3.05" velocity = "0"/>
     <parent link="link5"/>

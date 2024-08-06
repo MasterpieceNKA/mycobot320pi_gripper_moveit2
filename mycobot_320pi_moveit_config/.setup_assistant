@@ -1,13 +1,13 @@
 moveit_setup_assistant_config:
   urdf:
     package: mycobot_320pi
-    relative_path: urdf/mycobot_320_pi_gripper_2022.urdf
+    relative_path: urdf/mycobot_320pi_2022_gripper.urdf
   srdf:
-    relative_path: config/mycobot_320pi_with_gripper.srdf
+    relative_path: config/firefighter.srdf
   package_settings:
     author_name: na
     author_email: na@mail.com
-    generated_timestamp: 1713982309
+    generated_timestamp: 1722947910
   control_xacro:
     command:
       - position

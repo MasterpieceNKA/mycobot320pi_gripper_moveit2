@@ -4,7 +4,7 @@
   <name>mycobot_320pi_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the mycobot_320pi_with_gripper with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the firefighter with the MoveIt Motion Planning Framework
   </description>
   <maintainer email="na@mail.com">na</maintainer>
 
