@@ -3,18 +3,18 @@ controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
 
-    mycobot_arm_controller:
+    arm_group_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    mycobot_gripper_controller:
+    gripper_group_controller:
       type: position_controllers/GripperActionController
 
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-mycobot_arm_controller:
+arm_group_controller:
   ros__parameters:
     joints:
       - joint2_to_joint1
@@ -28,6 +28,6 @@ mycobot_arm_controller:
     state_interfaces:
       - position
       - velocity
-mycobot_gripper_controller:
+gripper_group_controller:
   ros__parameters:
-    joint: mycobot_gripper_joint
+    joint: gripper_controller

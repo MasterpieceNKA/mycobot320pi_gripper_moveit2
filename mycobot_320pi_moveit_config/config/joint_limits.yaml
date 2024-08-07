@@ -23,6 +23,11 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+  gripper_controller:
+    has_velocity_limits: false
+    max_velocity: 0
+    has_acceleration_limits: false
+    max_acceleration: 0
   gripper_left3_to_gripper_left1_mimic_jnt:
     has_velocity_limits: false
     max_velocity: 0
@@ -59,11 +64,6 @@ joint_limits:
     has_acceleration_limits: false
     max_acceleration: 0
   joint6output_to_joint6:
-    has_velocity_limits: false
-    max_velocity: 0
-    has_acceleration_limits: false
-    max_acceleration: 0
-  mycobot_gripper_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
