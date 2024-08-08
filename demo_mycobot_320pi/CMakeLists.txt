@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
+find_package(moveit_task_constructor_core REQUIRED)
 
 add_executable(demo_mycobot_320pi_moveit src/demo_mycobot_320pi_moveit.cpp)
 target_include_directories(demo_mycobot_320pi_moveit PUBLIC
@@ -21,8 +22,20 @@ ament_target_dependencies(
   "rclcpp"
 )
 
-install(TARGETS demo_mycobot_320pi_moveit
-  DESTINATION lib/${PROJECT_NAME}) 
+install(TARGETS demo_mycobot_320pi_moveit DESTINATION lib/${PROJECT_NAME}) 
+
+  add_executable(pick_place_demo src/pick_place_demo.cpp)
+  target_include_directories(pick_place_demo PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  target_compile_features(pick_place_demo PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+  ament_target_dependencies(
+    pick_place_demo
+    "moveit_task_constructor_core"
+    "rclcpp"
+  )
+  install(TARGETS pick_place_demo  DESTINATION lib/${PROJECT_NAME})
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

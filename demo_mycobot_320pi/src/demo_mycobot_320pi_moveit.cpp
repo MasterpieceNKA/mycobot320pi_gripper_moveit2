@@ -7,7 +7,7 @@
 int main(int argc, char * argv[])
 {
 
-    std::cout << "Hello from demo!!\n";
+    std::cout << "Hello from demo: " << argc << ", " << argv[0] << "\n";
 
     return 0;
 }
