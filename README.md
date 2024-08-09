@@ -14,13 +14,13 @@ The main branch is configured for [ROS2 Humble Hawksbill](https://docs.ros.org/e
 mkdir -p mycobot_320pi/src
 cd mycobot_320pi/src 
 
-git clone https://github.com/MasterpieceNKA/mycobot320pi_gripper_moveit2.git
+git clone https://github.com/MasterpieceNKA/mycobot_320pi_gripper_moveit2.git
 ``` 
 
 2. Install dependencies
 
 ```
-for repo in mycobot320pi_gripper_moveit2/mycobot_320pi.repos; do vcs import < "$repo"; done
+for repo in mycobot_320pi_gripper_moveit2/mycobot_320pi.repos; do vcs import < "$repo"; done
 
 rosdep update
 
