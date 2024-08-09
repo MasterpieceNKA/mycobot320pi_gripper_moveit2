@@ -50,10 +50,10 @@
         <joint name="gripper_controller" value="0"/>
     </group_state>
     <group_state name="open_wide" group="gripper_group">
-        <joint name="gripper_controller" value="0.3"/>
+        <joint name="gripper_controller" value="0.27"/>
     </group_state>
     <group_state name="close" group="gripper_group">
-        <joint name="gripper_controller" value="-0.7"/>
+        <joint name="gripper_controller" value="-0.67"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="link6" group="gripper_group"/>

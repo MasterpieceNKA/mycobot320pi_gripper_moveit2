@@ -287,8 +287,7 @@ mtc::Task MTCTaskNode::createTask()
       place_ready->insert(std::move(wrapper));
     }
     task.add(std::move(place_ready));
-  }
-  //*/
+  } 
 
   {
     auto stage_move_to_place = std::make_unique<mtc::stages::Connect>(
@@ -335,12 +334,11 @@ mtc::Task MTCTaskNode::createTask()
       place->insert(std::move(wrapper));
     }
     {
-      auto stage = std::make_unique<mtc::stages::MoveTo>("open hand", interpolation_planner);
+      auto stage = std::make_unique<mtc::stages::MoveTo>("open hand", sampling_planner); // sampling_planner interpolation_planner
       stage->setGroup(hand_group_name);
       stage->setGoal("open");
       place->insert(std::move(stage));
     }
-
     {
       auto stage =
           std::make_unique<mtc::stages::ModifyPlanningScene>("forbid collision (hand,object)");
@@ -359,22 +357,22 @@ mtc::Task MTCTaskNode::createTask()
     {
       auto stage = std::make_unique<mtc::stages::MoveRelative>("retreat", cartesian_planner);
       stage->properties().configureInitFrom(mtc::Stage::PARENT, {"group"});
-      stage->setMinMaxDistance(0.005, 0.01);
+      stage->setMinMaxDistance(0.1, 0.3);
       stage->setIKFrame(hand_frame);
       stage->properties().set("marker_ns", "retreat");
 
       // Set retreat direction
       geometry_msgs::msg::Vector3Stamped vec;
       vec.header.frame_id = "world";
-      vec.vector.z = 0.5;
+      vec.vector.z = 1.0;
       stage->setDirection(vec);
       place->insert(std::move(stage));
     }
     task.add(std::move(place));
-  }
+  } 
 
   {
-    auto stage = std::make_unique<mtc::stages::MoveTo>("return home", interpolation_planner);
+    auto stage = std::make_unique<mtc::stages::MoveTo>("return home", sampling_planner); // sampling_planner interpolation_planner
     stage->properties().configureInitFrom(mtc::Stage::PARENT, {"group"});
     stage->setGoal("home");
     task.add(std::move(stage));
