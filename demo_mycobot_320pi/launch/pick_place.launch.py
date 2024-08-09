@@ -81,13 +81,13 @@ def generate_launch_description():
     #'''
     pickplace_node = Node(
         package="demo_mycobot_320pi",
-        executable="pick_place_demo",
+        executable="pick_place",
         output="screen",
         parameters=[
             os.path.join(
                 get_package_share_directory("demo_mycobot_320pi"),
                 "config",
-                "mycobot_320pi_config.yaml",
+                "pick_place.yaml",
             ),
             moveit_config.robot_description,
             moveit_config.robot_description_semantic,

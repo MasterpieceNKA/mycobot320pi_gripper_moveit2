@@ -37,7 +37,7 @@ private:
 };
 
 MTCTaskNode::MTCTaskNode(const rclcpp::NodeOptions &options)
-    : node_{std::make_shared<rclcpp::Node>("pick_place_demo_node", options)}
+    : node_{std::make_shared<rclcpp::Node>("pick_place", options)}
 {
 }
 
