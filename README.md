@@ -22,6 +22,8 @@ git clone https://github.com/MasterpieceNKA/mycobot320pi_gripper_moveit2.git
 ```
 for repo in mycobot320pi_gripper_moveit2/mycobot_320pi.repos; do vcs import < "$repo"; done
 
+rosdep update
+
 rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
